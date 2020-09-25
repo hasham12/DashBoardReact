@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Header, Icon, Modal } from 'semantic-ui-react'
+import { Button, Header, Icon, Modal, Form } from 'semantic-ui-react'
 
 export default class CreateProjectButton extends React.Component {
   // <div>
@@ -12,12 +12,16 @@ export default class CreateProjectButton extends React.Component {
     
   render(){
     return(
-      <Modal
-      trigger={<Button>Show Modal</Button>}
-      header='Reminder!'
-      content='Call Benjamin regarding the reports.'
-      actions={['Snooze', { key: 'done', content: 'Done', positive: true }]}
-    />
+      <Form>
+    <Form.Group widths='equal'>
+        <Form.Input label='Activity Name' placeholder='eg. CIS 422' />
+        <Form.Input label='Activity End Date' placeholder='Pick a Date' />
+    </Form.Group>
+    <Form.Group widths='equal'>
+        <Form.Input label='Total Capacity' placeholder='eg. 30' />
+        <Form.Input label='Team Capacity' placeholder='eg. 3' />
+    </Form.Group>
+</Form>
     )
 }
 }

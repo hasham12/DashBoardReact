@@ -5,6 +5,7 @@ import { actionCreators } from '../../store/Card'
 import 'semantic-ui-css/semantic.min.css'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import CreateProjectButton from '../pages/AddProjectButton'
+import DataTable from '../pages/DataTable'
 
 export default class CreateProject extends React.Component{
     constructor(){
@@ -13,7 +14,12 @@ export default class CreateProject extends React.Component{
 
     render(){
         return(
-            <CreateProjectButton/>
+            <div>
+                <CreateProjectButton/>
+                <DataTable/>
+            </div>
+    
+          
         );
     }
 } 
