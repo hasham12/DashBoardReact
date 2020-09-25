@@ -25,11 +25,11 @@ class SideMenu extends Component {
                     </TextIcon>
                 </Menu.Item>
 
-                <Menu.Item as={Link} to={'/appointments'} name='appointments'
+                <Menu.Item as={Link} to={'/createProject'} name='appointments'
                            active={activeItem === 'appointments'}
                            onClick={this.handleItemClick}>
                     <TextIcon hideText={this.props.smallMenu} name='calendar'>
-                        Appointments
+                        Create Project
                     </TextIcon>
                 </Menu.Item>
 
@@ -40,7 +40,7 @@ class SideMenu extends Component {
                     onClick={this.handleItemClick}
                     >
                     <TextIcon hideText={this.props.smallMenu} name='users'>
-                        Patients
+                        Tasks
                     </TextIcon>
                 </Menu.Item>
 
@@ -52,13 +52,13 @@ class SideMenu extends Component {
                     </TextIcon>
                 </Menu.Item>
 
-                {/* <Menu.Item as={Link} to={'/layout'} name='layout' active={activeItem === 'layout'}
+                <Menu.Item as={Link} to={'/layout'} name='layout' active={activeItem === 'layout'}
                            onClick={this.handleItemClick}>
                     <TextIcon hideText={this.props.smallMenu} name='calendar'>
                         Layout
                     </TextIcon>
 
-                </Menu.Item> */}
+                </Menu.Item>
             </Menu>
         )
     }

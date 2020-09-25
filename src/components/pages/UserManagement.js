@@ -21,7 +21,7 @@ class UserManagement extends Component {
         name: "",
         email: "",
         role: "",
-        caloryLimit: 0
+        Task: ""
       }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,7 +39,7 @@ class UserManagement extends Component {
         </Table.Cell>
         <Table.Cell>{user.email}</Table.Cell>
         <Table.Cell>{user.role}</Table.Cell>
-        <Table.Cell>{user.caloryLimit}</Table.Cell>
+        <Table.Cell>{user.Task}</Table.Cell>
         <Table.Cell>
           <Button onClick={() => this.selectUserForEditing(user.id)} size="mini" icon>
             <Icon name="pencil" />
@@ -96,7 +96,7 @@ class UserManagement extends Component {
         name: "",
         email: "",
         role: "",
-        caloryLimit: 0
+        Task: ""
       }
     });
   };
@@ -107,14 +107,14 @@ class UserManagement extends Component {
     }
     return [
       <Segment>
-        <Header>Registered Users</Header>
+        <Header>Assigned Task Users</Header>
         <Table compact celled>
           <Table.Header fullWidth>
             <Table.Row>
               <Table.HeaderCell>Name</Table.HeaderCell>
               <Table.HeaderCell>Email</Table.HeaderCell>
               <Table.HeaderCell>Role</Table.HeaderCell>
-              <Table.HeaderCell>Calory Limit</Table.HeaderCell>
+              <Table.HeaderCell>Task</Table.HeaderCell>
               <Table.HeaderCell width={2}>Actions</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
@@ -165,13 +165,21 @@ class UserManagement extends Component {
               />
             </Form.Field>
             <Form.Field>
-            <label>Calory Limit</label>
-            <Input
+            <label>Task Details</label>
+            {/* <Input
               type="number"
               onChange={this.handleChange}
-              name="caloryLimit"
-              value={this.state.newUser.caloryLimit}
+              name="Task"
+              value={this.state.newUser.Task}
               placeholder="Select Calory Limit"
+              fluid
+            /> */}
+            <Input
+              type="text"
+              onChange={this.handleChange}
+              name="Task"
+              value={this.state.newUser.Task}
+              placeholder="Enter Task"
               fluid
             />
             </Form.Field>

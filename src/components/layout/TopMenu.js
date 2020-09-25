@@ -25,8 +25,8 @@ class TopMenu extends Component {
       <Menu fixed="top" className="top-menu">
         <Menu.Item className="logo-space-menu-item">
           <div className="display-inline logo-space">
-            <Image src="./logo.png" />
-            <p>React Dashboard</p>
+            {/* <Image src="./logo.png" /> */}
+            <p>Task Management</p>
           </div>
         </Menu.Item>
 
@@ -66,7 +66,7 @@ class TopMenu extends Component {
                 size={"mini"}
                 src="https://react.semantic-ui.com/images/avatar/large/jenny.jpg"
               />
-              Albiona
+              Hasham
             </div>
           </Menu.Item>
         </Menu.Menu>

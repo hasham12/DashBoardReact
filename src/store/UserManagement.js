@@ -6,22 +6,22 @@ const ADD_USER_ACTION = "ADD_USER";
 const initialState = {
   users: [
     {
-      name: "Albiona",
-      email: "alb@gmail.com",
-      role: "Admin",
-      caloryLimit: 123
+      name: "Test1",
+      email: "avolox@gmail.com",
+      role: "Manager",
+      Task: "Task"
     },
     {
-      name: "Albiona",
-      email: "alb@gmail.com",
-      role: "Admin",
-      caloryLimit: 123
+      name: "Test2",
+      email: "avolox@gmail.com",
+      role: "Developer",
+      Task: "Task"
     },
     {
-      name: "Albiona",
-      email: "alb@gmail.com",
+      name: "Test3",
+      email: "avolox@gmail.com",
       role: "Admin",
-      caloryLimit: 123
+      Task: "Task"
     }
   ]
 };
