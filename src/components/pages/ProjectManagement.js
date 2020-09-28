@@ -7,14 +7,13 @@ import {
   Input,
   Message,
   Segment,
-  Table,
-  TextArea
+  Table
 } from "semantic-ui-react";
 import { bindActionCreators } from "redux";
-import { actionCreators } from "../../store/UserManagement";
+import { actionCreators } from "../../store/ProjectManagement";
 import { connect } from "react-redux";
 
-class UserManagement extends Component {
+class ProjectManagementFrom extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +28,7 @@ class UserManagement extends Component {
   }
 
   getTableData = props => {
-    return props.state.userManagement.users.filter(user => {
+    return props.state.ProjectManagementFrom.users.filter(user => {
         return user.name.includes(props.state.searchStore.text)
     }).map(user => <Table.Row>
         <Table.Cell>
@@ -57,7 +56,7 @@ class UserManagement extends Component {
   };
 
   selectUserForEditing = id => {
-    let user = this.props.state.userManagement.users.find(v => v.id === id);
+    let user = this.props.state.ProjectManagementFrom.users.find(v => v.id === id);
 
     this.setState({
       newUser: user
@@ -94,28 +93,28 @@ class UserManagement extends Component {
   clearUserForm = () => {
     this.setState({
       newUser: {
-        name: "",
-        email: "",
-        role: "",
-        Task: ""
+        projName: "",
+        ProjManager: "",
+        date: "",
+        details: ""
       }
     });
   };
 
   render() {
-    if (!this.props.state.userManagement.users) {
-      return <Message>USERMNG Loading</Message>;
+    if (!this.props.state.ProjectManagementFrom.users) {
+      return <Message>Project Loading</Message>;
     }
     return [
       <Segment>
-        <Header>Assigned Task Users</Header>
+        <Header>Create Project</Header>
         <Table compact celled>
           <Table.Header fullWidth>
             <Table.Row>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Email</Table.HeaderCell>
-              <Table.HeaderCell>Role</Table.HeaderCell>
-              <Table.HeaderCell>Task</Table.HeaderCell>
+              <Table.HeaderCell>Project Name</Table.HeaderCell>
+              <Table.HeaderCell>Project Manager</Table.HeaderCell>
+              <Table.HeaderCell>Created Date</Table.HeaderCell>
+              <Table.HeaderCell>Deatils</Table.HeaderCell>
               <Table.HeaderCell width={2}>Actions</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
@@ -133,7 +132,7 @@ class UserManagement extends Component {
         <Form>
           <Form.Group unstackable widths={2}>
             <Form.Field>
-              <label>Username</label>
+              <label>Project Name</label>
               <Input
                 type="text"
                 name="name"
@@ -143,7 +142,7 @@ class UserManagement extends Component {
               />
             </Form.Field>
             <Form.Field>
-              <label>Email</label>
+              <label>Project Manager</label>
               <Input
                 type="text"
                 name="email"
@@ -156,7 +155,7 @@ class UserManagement extends Component {
 
           <Form.Group unstackable widths={2}>
             <Form.Field>
-              <label>Role</label>
+              <label>Created Date</label>
               <Input
                 type="text"
                 onChange={this.handleChange}
@@ -166,7 +165,7 @@ class UserManagement extends Component {
               />
             </Form.Field>
             <Form.Field>
-            <label>Task Details</label>
+            <label>Deatils</label>
             {/* <Input
               type="number"
               onChange={this.handleChange}
@@ -175,24 +174,14 @@ class UserManagement extends Component {
               placeholder="Select Calory Limit"
               fluid
             /> */}
-            {/* <Input
+            <Input
               type="text"
-              size='massive'
               onChange={this.handleChange}
               name="Task"
               value={this.state.newUser.Task}
               placeholder="Enter Task"
               fluid
-            /> */}
-             <TextArea 
-             placeholder='Tell us more'
-             type="text"
-             onChange={this.handleChange}
-             name="Task"
-             value={this.state.newUser.Task}
-             placeholder="Enter Task"
-             fluid
-              />
+            />
             </Form.Field>
           </Form.Group>
           <Button primary type="submit" onClick={this.handleSubmit}>
@@ -208,10 +197,10 @@ class UserManagement extends Component {
 
 export default connect(
   state => {
-    const { searchStore, userManagement } = state;
+    const { searchStore, ProjectManagementFrom } = state;
     return {
-      state: { searchStore, userManagement }
+      state: { searchStore, ProjectManagementFrom }
     };
   },
   dispatch => bindActionCreators(actionCreators, dispatch)
-)(UserManagement);
+)(ProjectManagementFrom);

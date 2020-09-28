@@ -48,7 +48,7 @@ class SideMenu extends Component {
                            onClick={this.handleItemClick}>
 
                     <TextIcon hideText={this.props.smallMenu} name='time'>
-                        Card
+                        Project Details
                     </TextIcon>
                 </Menu.Item>
 

@@ -4,7 +4,7 @@ import {Segment} from "semantic-ui-react";
 
 const Home = props => (
   <Segment>
-    <h1>React Admin Dashboard</h1>
+    <h1>Task Management Dashboard</h1>
   </Segment>
 );
 
